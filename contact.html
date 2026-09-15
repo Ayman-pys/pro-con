@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-i18n="meta.title.contact">Contact | International Academic Workshop 2028</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta.desc.contact" content="Contact the organiser of a proposed international academic workshop for September 2028. Enquiries from professors, universities, and potential collaborators are welcome.">
+<meta name="author" content="Ayman Alkinani">
+<meta name="theme-color" content="#101b2b">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Let's Discuss the Initiative">
+<meta property="og:description" content="Enquiries from professors, academic institutions, and potential collaborators are welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@300;400;500;600&family=Noto+Kufi+Arabic:wght@400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true">P&amp;C</span>
+      <span class="brand-text">
+        <span class="brand-name" data-i18n="brand.name">Pro &amp; Contra</span>
+        <span class="brand-sub" data-i18n="brand.sub">International Academic Workshop</span>
+      </span>
+    </a>
+
+    <div class="header-tools">
+      <button class="lang-toggle" id="langToggle" type="button" lang="ar" aria-label="Switch language to Arabic">العربية</button>
+      <button class="nav-toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="primaryNav">
+        <span class="nav-toggle-bars" aria-hidden="true"><span></span><span></span></span>
+        <span class="visually-hidden" data-i18n="a11y.menu">Open menu</span>
+      </button>
+    </div>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Primary">
+      <ul>
+        <li><a href="index.html" data-nav="home" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-nav="about" data-i18n="nav.about">About</a></li>
+        <li><a href="about.html#workshop" data-nav="workshop" data-i18n="nav.workshop">The Workshop</a></li>
+        <li><a href="about.html#model" data-nav="model" data-i18n="nav.model">Academic Model</a></li>
+        <li><a href="contact.html" data-nav="contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-kicker reveal" data-i18n="ct.kicker">Proposed academic initiative — September 2028</p>
+      <h1 class="reveal" data-i18n="ct.title">Let's Discuss the Initiative</h1>
+      <p class="hero-lead reveal" data-i18n="ct.lead">If you are a professor, academic institution, university representative, or potential collaborator interested in learning more about the initiative, we would be pleased to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container contact-grid">
+
+      <div class="contact-form-wrap">
+        <h2 data-i18n="ct.form.title">Send a message</h2>
+        <p class="form-intro" data-i18n="ct.form.intro">This form is part of a front-end prototype. It validates your details in the browser but does not transmit them anywhere — connecting a backend or email service would make it functional. Until then, please use the email address alongside.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="name" data-i18n="ct.f.name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="err-name">
+            <p class="field-error" id="err-name" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="email" data-i18n="ct.f.email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
+            <p class="field-error" id="err-email" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="institution" data-i18n="ct.f.inst">Institution / Organization</label>
+            <input type="text" id="institution" name="institution" autocomplete="organization" aria-describedby="err-institution">
+            <p class="field-error" id="err-institution" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="subject" data-i18n="ct.f.subject">Subject</label>
+            <select id="subject" name="subject" required aria-describedby="err-subject">
+              <option value="" data-i18n="ct.f.choose">Please choose a subject</option>
+              <option value="mentorship" data-i18n="cat.1.t">Academic Mentorship</option>
+              <option value="institutional" data-i18n="cat.2.t">Institutional Collaboration</option>
+              <option value="students" data-i18n="cat.3.t">Student Participation</option>
+              <option value="publication" data-i18n="cat.4.t">Publication</option>
+              <option value="general" data-i18n="cat.5.t">General Inquiry</option>
+            </select>
+            <p class="field-error" id="err-subject" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="ct.f.msg">Message</label>
+            <textarea id="message" name="message" rows="6" required aria-describedby="err-message"></textarea>
+            <p class="field-error" id="err-message" role="alert"></p>
+          </div>
+
+          <button class="btn btn-primary" type="submit" data-i18n="ct.f.submit">Check and review message</button>
+
+          <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+        </form>
+      </div>
+
+      <aside class="contact-aside">
+        <h2 data-i18n="ct.direct.title">Prefer email? Contact us directly.</h2>
+        <dl class="contact-details">
+          <dt data-i18n="ct.d.name">Organiser</dt>
+          <dd>Ayman Alkinani</dd>
+          <dt data-i18n="ct.d.email">Email</dt>
+          <dd><a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a></dd>
+          <dt data-i18n="ct.d.date">Proposed date</dt>
+          <dd data-i18n="ct.d.date.v">September 2028</dd>
+          <dt data-i18n="ct.d.loc">Proposed location</dt>
+          <dd data-i18n="ct.d.loc.v">ETH Zürich, subject to approval</dd>
+        </dl>
+        <p><a class="btn btn-ghost" href="mailto:dr.ayman.alkinani@gmail.com?subject=International%20Academic%20Workshop%202028" data-i18n="ct.d.cta">Write an email</a></p>
+        <p class="note" data-i18n="ct.d.note">ETH Zürich has not approved, endorsed, or agreed to host this initiative. It is named as a proposed collaborator.</p>
+      </aside>
+
+    </div>
+  </section>
+
+  <section class="section section-paper" id="categories">
+    <div class="container">
+      <div class="section-head">
+        <h2 data-i18n="cat.title">What would you like to discuss?</h2>
+        <p class="section-lead" data-i18n="cat.lead">These are the areas where collaboration would be most valuable at this stage of the proposal.</p>
+      </div>
+      <div class="grid grid-3 reveal">
+        <article class="card"><h3 data-i18n="cat.1.t">Academic Mentorship</h3><p data-i18n="cat.1.p">For professors and researchers open to guiding student research, debate, and writing during the workshop.</p></article>
+        <article class="card"><h3 data-i18n="cat.2.t">Institutional Collaboration</h3><p data-i18n="cat.2.p">For universities and academic bodies interested in hosting, supporting, or advising on the initiative.</p></article>
+        <article class="card"><h3 data-i18n="cat.3.t">Student Participation</h3><p data-i18n="cat.3.p">For schools and programmes whose students may wish to take part in the 2028 cohort.</p></article>
+        <article class="card"><h3 data-i18n="cat.4.t">Publication</h3><p data-i18n="cat.4.p">For editors and academic platforms willing to advise on reviewing or publishing the two final articles.</p></article>
+        <article class="card"><h3 data-i18n="cat.5.t">General Inquiry</h3><p data-i18n="cat.5.p">For any other question about the initiative, its timeline, or how it is being developed.</p></article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <p class="footer-title" data-i18n="footer.title">A proposed international academic workshop — September 2028</p>
+      <p class="footer-by" data-i18n="footer.by">Developed by Ayman Alkinani</p>
+      <p><a href="mailto:dr.ayman.alkinani@gmail.com">dr.ayman.alkinani@gmail.com</a></p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+        <li><a href="about.html" data-i18n="nav.about">About</a></li>
+        <li><a href="contact.html" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container">
+    <p class="disclaimer" data-i18n="footer.disclaimer">ETH Zürich is referenced as a proposed academic host/collaborator. No partnership, endorsement, hosting arrangement, publication agreement, or certification arrangement has been established unless explicitly confirmed by ETH Zürich.</p>
+    <p class="copyright">© <span id="year">2026</span> <span data-i18n="footer.rights">Ayman Alkinani. All rights reserved.</span></p>
+  </div>
+</footer>
+
+<script src="main.js" defer></script>
+</body>
+</html>
