@@ -1,5 +1,5 @@
 /* =========================================================
-   Pro & Contra — International Academic Workshop 2028
+   Pro & Contra — 7-Day International Academic Program 2028
    Design system
    ========================================================= */
 
@@ -185,6 +185,7 @@ h4{ font-size:var(--step-0); font-family:var(--font-body); font-weight:600; }
 .btn + .btn{ margin-inline-start:.6rem; }
 .btn-primary{ background:var(--ink); color:var(--text-invert); }
 .btn-primary:hover{ background:var(--ink-2); transform:translateY(-1px); }
+.btn-primary:disabled{ opacity:.6; cursor:not-allowed; transform:none; }
 .btn-ghost{ background:transparent; color:var(--ink); border-color:var(--line-strong); }
 .btn-ghost:hover{ border-color:var(--ink); background:rgba(16,27,43,.04); }
 .btn-accent{ background:transparent; color:var(--accent-soft); border-color:var(--accent-soft); }
@@ -269,6 +270,44 @@ h4{ font-size:var(--step-0); font-family:var(--font-body); font-weight:600; }
 .requirement-list{ display:grid; gap:1.6rem; }
 .requirement-list h4{ margin-bottom:.3em; color:var(--ink); }
 .requirement-list p{ margin:0; color:var(--muted); font-size:var(--step--1); }
+
+/* ---------- 7-Day Program timeline ---------- */
+.program-flow{
+  font-family:var(--font-display); font-style:italic;
+  font-size:var(--step-1); color:var(--accent-soft);
+  margin:0 0 2.5rem; letter-spacing:.01em;
+}
+.days-timeline{
+  display:grid; gap:1.1rem;
+  border-top:1px solid var(--line-invert);
+  padding-top:2rem;
+}
+.day-card{
+  position:relative;
+  background:rgba(243,240,234,.04);
+  border:1px solid var(--line-invert);
+  border-radius:var(--radius-lg);
+  padding:1.6rem 1.5rem 1.5rem;
+  border-inline-start:3px solid var(--accent-soft);
+}
+.day-num{
+  display:none;
+}
+.day-label{
+  font-family:var(--font-display); font-size:.82rem;
+  letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent-soft); margin:0 0 .4em;
+}
+.day-card h3{ font-size:var(--step-1); margin-bottom:.6em; color:var(--text-invert); }
+.day-card ul{ display:grid; gap:.5rem; }
+.day-card li{
+  position:relative; padding-inline-start:1.3rem;
+  color:var(--muted-invert); font-size:var(--step--1); line-height:1.55;
+}
+.day-card li::before{
+  content:""; position:absolute; inset-inline-start:0; top:.65em;
+  width:.55rem; height:1px; background:var(--accent-soft);
+}
 
 /* ---------- Process ---------- */
 .process{ display:grid; gap:0; }
@@ -483,7 +522,9 @@ html[dir="rtl"] .lang-toggle{ font-family:var(--font-body); }
 html[dir="rtl"] .brand-mark,
 html[dir="rtl"] .process-num,
 html[dir="rtl"] .card-slot,
-html[dir="rtl"] .flow-i{ font-family:var(--font-display); }
+html[dir="rtl"] .flow-i,
+html[dir="rtl"] .day-label{ font-family:var(--font-display); }
+html[dir="rtl"] .program-flow{ font-family:"Amiri", "Noto Kufi Arabic", serif; }
 
 /* =========================================================
    Breakpoints
@@ -499,6 +540,7 @@ html[dir="rtl"] .flow-i{ font-family:var(--font-display); }
   .section{ padding:5.5rem 0; }
   .hero{ padding:5rem 0 4rem; }
   .card-partner-senior{ padding:2rem 1.9rem; }
+  .days-timeline{ grid-template-columns:repeat(2,1fr); gap:1.25rem; }
 }
 
 /* Desktop */
@@ -523,7 +565,7 @@ html[dir="rtl"] .flow-i{ font-family:var(--font-display); }
   .primary-nav a[aria-current="page"]::after{ transform:scaleX(1); }
   .header-tools{ order:3; margin-inline-start:1.5rem; }
 
-  .factbar{ grid-template-columns:repeat(4,1fr); }
+  .factbar{ grid-template-columns:repeat(5,1fr); }
   .split{
     grid-template-columns:1fr 1fr; gap:0;
   }
@@ -541,6 +583,8 @@ html[dir="rtl"] .flow-i{ font-family:var(--font-display); }
   .process-step h3{ margin:0; }
   .flow{ grid-template-columns:repeat(2,1fr); column-gap:3rem; }
   .flow li:nth-child(2){ border-top:1px solid var(--line-invert); }
+
+  .days-timeline{ grid-template-columns:repeat(3,1fr); gap:1.5rem; }
 
   .contact-grid{ grid-template-columns:1.5fr 1fr; gap:4rem; }
   .section{ padding:6.5rem 0; }
